@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Store Redirect</title>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+
+  <script>
+    // URLs for both platforms
+    const androidUrl = "https://play.google.com/store/apps/details?id=in.juspay.jatrisaathi&pcampaignid=web_share";
+    const iosUrl = "https://apps.apple.com/app/id6451491581";
+
+    // Detect the user's platform
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(userAgent)) {
+      // Redirect to Play Store for Android
+      window.location.href = androidUrl;
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      // Redirect to App Store for iOS
+      window.location.href = iosUrl;
+    } else {
+      // Optional: Handle unknown devices (redirect to a landing page)
+      document.body.innerHTML = "<p>Please open this link on a mobile device.</p>";
+    }
+  </script>
+</body>
+</html>
