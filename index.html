@@ -12,6 +12,7 @@
     // URLs for both platforms
     const androidUrl = "https://play.google.com/store/apps/details?id=in.juspay.jatrisaathi&pcampaignid=web_share";
     const iosUrl = "https://apps.apple.com/app/id6451491581";
+    const otherUrl = "https://www.yatrisathi.in/";
 
     // Detect the user's platform
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -23,8 +24,7 @@
       // Redirect to App Store for iOS
       window.location.href = iosUrl;
     } else {
-      // Optional: Handle unknown devices (redirect to a landing page)
-      document.body.innerHTML = "<p>Please open this link on a mobile device.</p>";
+      window.location.href = otherUrl;
     }
   </script>
 </body>
